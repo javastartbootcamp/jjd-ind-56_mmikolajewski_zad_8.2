@@ -32,6 +32,5 @@ public class DataReader {
         System.out.println("Podaj miejsce wydarzenia: ");
         return scanner.nextLine();
     }
-    
 }
 
