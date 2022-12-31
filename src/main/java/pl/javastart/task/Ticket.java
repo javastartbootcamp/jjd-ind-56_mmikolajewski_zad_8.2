@@ -3,21 +3,22 @@ package pl.javastart.task;
 public class Ticket {
 
     private String titleEvent;
-    private String place;
+    private Place place;
     private String type;
 
     private static final double basicPrice = 150;
     private static final double dicount = 0.1;
     private static int id = 0;
 
-    public Ticket(String titleEvent, String place) {
+    public Ticket(String titleEvent, Place place) {
         this.titleEvent = titleEvent;
         this.place = place;
         this.id++;
     }
 
     void printInfo() {
-        System.out.print("Nazwa wydażenia: " + titleEvent + ", Miejsce wydażenia: " + place + ", typ biletu: " + type);
+        System.out.print("Nazwa wydażenia: " + titleEvent + ", Miejsce wydażenia: "
+                + place.getCity() + ", " + place.getStreet() + ", typ biletu: " + type);
     }
 
     public String getTitleEvent() {
@@ -28,11 +29,11 @@ public class Ticket {
         this.titleEvent = titleEvent;
     }
 
-    public String getPlace() {
+    public Place getPlace() {
         return place;
     }
 
-    public void setPlace(String place) {
+    public void setPlace(Place place) {
         this.place = place;
     }
 

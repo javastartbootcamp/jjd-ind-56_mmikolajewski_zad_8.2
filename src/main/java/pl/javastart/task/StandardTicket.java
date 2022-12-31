@@ -1,7 +1,7 @@
 package pl.javastart.task;
 
 public class StandardTicket extends Ticket {
-    public StandardTicket(String titleEvent, String place) {
+    public StandardTicket(String titleEvent, Place place) {
         super(titleEvent, place);
         setType("Bilet standardowy");
     }

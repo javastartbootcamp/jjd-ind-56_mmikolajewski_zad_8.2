@@ -1,7 +1,7 @@
 package pl.javastart.task;
 
 public class GiftTicket extends Ticket {
-    public GiftTicket(String titleEvent, String place) {
+    public GiftTicket(String titleEvent, Place place) {
         super(titleEvent, place);
         setType("Bilet prezentowy");
     }
