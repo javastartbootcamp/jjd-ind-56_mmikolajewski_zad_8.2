@@ -1,14 +1,18 @@
 package pl.javastart.task;
 
+import pl.javastart.task.tickets.GiftTicket;
+import pl.javastart.task.tickets.OnlineTicket;
+import pl.javastart.task.tickets.StandardTicket;
+import pl.javastart.task.tickets.Ticket;
+import pl.javastart.task.tickets.DataReader;
+import pl.javastart.task.tickets.PriceCalculator;
+
 public class Main {
 
     public static void main(String[] args) {
         DataReader dataReader = new DataReader();
-        System.out.println("Bilet online");
         OnlineTicket onlineTicket = dataReader.createOnlineTicket();
-        System.out.println("Bilet standardowy");
         StandardTicket standardTicket = dataReader.createStandardTicket();
-        System.out.println("Bilet prezent");
         GiftTicket giftTicket = dataReader.createGiftTicket();
 
         double price1 = PriceCalculator.countPrice(onlineTicket);
@@ -19,14 +23,12 @@ public class Main {
         System.out.println(price3);
 
         onlineTicket.printInfo();
-        System.out.println("Cena ostateczna: " + price1 + "zł");
-
+        PriceCalculator.printFinalPrice(price1);
         standardTicket.printInfo();
-        System.out.println("Cena ostateczna: " + price2 + "zł");
-
+        PriceCalculator.printFinalPrice(price2);
         giftTicket.printInfo();
-        System.out.println("Cena ostateczna: " + price3 + "zł");
+        PriceCalculator.printFinalPrice(price3);
 
-        System.out.println("Suma sprzedanych biletów: " + Ticket.getId());
+        System.out.println("Suma sprzedanych biletów: " + Ticket.getCounter());
     }
 }

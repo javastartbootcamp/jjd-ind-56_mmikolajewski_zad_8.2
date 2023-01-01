@@ -1,8 +1,10 @@
-package pl.javastart.task;
+package pl.javastart.task.tickets;
+
+import pl.javastart.task.Place;
 
 public class GiftTicket extends Ticket {
-    public GiftTicket(String titleEvent, Place place) {
-        super(titleEvent, place);
+    GiftTicket(String titleEvent, Place place, double basicPrice) {
+        super(titleEvent, place, basicPrice);
         setType("Bilet prezentowy");
     }
 
